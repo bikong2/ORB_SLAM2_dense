@@ -5,15 +5,16 @@
 #--------------------------------------------------------------------------------------------
 
 # Camera calibration and distortion parameters (OpenCV) 
-Camera.fx: 535.4
-Camera.fy: 539.2
-Camera.cx: 320.1
-Camera.cy: 247.6
+Camera.fx: 570.34
+Camera.fy: 570.34
+Camera.cx: 320.0
+Camera.cy: 240.0
 
-Camera.k1: 0.0
-Camera.k2: 0.0
-Camera.p1: 0.0
-Camera.p2: 0.0
+Camera.k1: 0
+Camera.k2: 0
+Camera.p1: 0
+Camera.p2: 0
+Camera.k3: 0
 
 Camera.width: 640
 Camera.height: 480
@@ -30,7 +31,7 @@ Camera.RGB: 1
 # Close/Far threshold. Baseline times.
 ThDepth: 40.0
 
-# Deptmap values factor
+# Deptmap values factor 
 DepthMapFactor: 5000.0
 
 #--------------------------------------------------------------------------------------------
@@ -70,4 +71,4 @@ Viewer.ViewpointF: 500
 #--------------------------------------------------------------------------------------------
 # PointCloud Mapping
 #--------------------------------------------------------------------------------------------
-PointCloudMapping.Resolution: 0.04
+PointCloudMapping.Resolution: 0.03

@@ -35,6 +35,9 @@
 #include "KeyFrameDatabase.h"
 #include "ORBVocabulary.h"
 #include "Viewer.h"
+#include "pointcloudmapping.h"
+
+class PointCloudMapping;
 
 namespace ORB_SLAM2
 {
@@ -158,6 +161,8 @@ private:
     std::mutex mMutexMode;
     bool mbActivateLocalizationMode;
     bool mbDeactivateLocalizationMode;
+    // point cloud mapping
+    shared_ptr<PointCloudMapping>  mpPointCloudMapping;
 };
 
 }// namespace ORB_SLAM

@@ -38,7 +38,10 @@
 #include "MapDrawer.h"
 #include "System.h"
 
+#include "pointcloudmapping.h"
 #include <mutex>
+
+class PointCloudMapping;
 
 namespace ORB_SLAM2
 {
@@ -54,6 +57,10 @@ class Tracking
 {  
 
 public:
+    // TO DO
+    Tracking(System* pSys, ORBVocabulary* pVoc, FrameDrawer* pFrameDrawer, MapDrawer* pMapDrawer, Map* pMap, shared_ptr<PointCloudMapping> pPointCloud,
+             KeyFrameDatabase* pKFDB, const string &strSettingPath, const int sensor);
+    
     Tracking(System* pSys, ORBVocabulary* pVoc, FrameDrawer* pFrameDrawer, MapDrawer* pMapDrawer, Map* pMap,
              KeyFrameDatabase* pKFDB, const string &strSettingPath, const int sensor);
 
@@ -94,7 +101,9 @@ public:
 
     // Current Frame
     Frame mCurrentFrame;
+    cv::Mat mImRGB;
     cv::Mat mImGray;
+    cv::Mat mImDepth;
 
     // Initialization Variables (Monocular)
     std::vector<int> mvIniLastMatches;
@@ -214,6 +223,8 @@ protected:
     bool mbRGB;
 
     list<MapPoint*> mlpTemporalPoints;
+    
+    shared_ptr<PointCloudMapping>  mpPointCloudMapping;
 };
 
 } //namespace ORB_SLAM
