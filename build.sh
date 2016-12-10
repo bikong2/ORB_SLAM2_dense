@@ -29,3 +29,12 @@
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j
+cd ..
+
+echo "*****************************************"
+echo "**********building ROS examples**********"
+echo "*****************************************"
+cd Examples/ROS/ORB_SLAM2/build
+cmake .. -DROS_BUILD_TYPE=Release
+make -j
+cd ../../../../

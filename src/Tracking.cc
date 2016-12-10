@@ -333,12 +333,14 @@ cv::Mat Tracking::GrabImageRGBD(const cv::Mat &imRGB,const cv::Mat &imD, const d
             cvtColor(mImGray,mImGray,CV_BGRA2GRAY);
     }
 
+    //std::cout << "mDepthMapFactor=" << mDepthMapFactor << std::endl;
+    //std::cout << "mImDepth.type()" << mImDepth.type() << endl;
     if(mDepthMapFactor!=1 || mImDepth.type()!=CV_32F)
     {
-        mImDepth.convertTo(mImDepth,CV_32F,mDepthMapFactor);
+        mImDepth.convertTo(mImDepth, CV_32F, mDepthMapFactor);
     }
 
-    mCurrentFrame = Frame(mImGray,mImDepth,timestamp,mpORBextractorLeft,mpORBVocabulary,mK,mDistCoef,mbf,mThDepth);
+    mCurrentFrame = Frame(mImGray, mImDepth, timestamp, mpORBextractorLeft, mpORBVocabulary, mK, mDistCoef, mbf, mThDepth);
 
     Track();
 
