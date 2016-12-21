@@ -10,13 +10,16 @@
 #01. input from pepper
 gnome-terminal -x bash -c "roscore"
 sleep 3
-gnome-terminal -x bash -c "rosrun ORB_SLAM2 RGBD Vocabulary/ORBvoc.txt Examples/RGB-D/TUM_pepper.yaml"
+#gnome-terminal -x bash -c "rosrun ORB_SLAM2 RGBD Vocabulary/ORBvoc.bin Examples/RGB-D/TUM_pepper.yaml"
+gnome-terminal -x bash -c "rosrun ORB_SLAM2 RGBD tools/self_trained_voc.txt Examples/RGB-D/TUM_pepper.yaml"
 sleep 15
 gnome-terminal -x bash -c "roslaunch rgbd_calib rt_calib_pepper.launch"
-#sleep 3
+sleep 3
 #gnome-terminal -x bash -c "cd /mnt/hgfs/database/ros_bags && rosbag play --clock 2016-11-04-16-34-07.bag"
 #gnome-terminal -x bash -c "cd /mnt/hgfs/database/ros_bags && rosbag play --clock 2016-12-02-19-39-16.bag"
-gnome-terminal -x bash -c "cd /mnt/hgfs/database/ros_bags && rosbag play --clock 2016-12-02-19-47-29.bag"
+#gnome-terminal -x bash -c "cd /mnt/hgfs/database/ros_bags && rosbag play --clock 2016-12-02-19-47-29.bag"
+#gnome-terminal -x bash -c "cd /mnt/hgfs/database/rosbags && rosbag play --clock 2016-12-15-14-20-33.bag"
+gnome-terminal -x bash -c "cd /home/lixihua/ali-datas/ros_bags && rosbag play --clock 2016-12-15-14-27-53.bag"
 
 #02. input form xtion
 #gnome-terminal -x bash -c "roscore"
