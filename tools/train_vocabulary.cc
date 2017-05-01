@@ -11,7 +11,8 @@
 #include "opencv2/core/core.hpp"
 #include <opencv/cv.h>
 #include <opencv/highgui.h>
-#include <opencv2/nonfree/features2d.hpp>
+#include <opencv2/features2d/features2d.hpp>
+//#include "opencv2/xfeatures2d.hpp"
 
 #include "ORBVocabulary.h"
 #include "ORBextractor.h"
@@ -31,8 +32,10 @@ std::string vociName = "self_trained_voc.txt";
 
 int main(int argc, char **argv) {
     cout << "***** Train Vocabulary *****" << endl;
-    vector<std::string> filenames;
+    //vector<std::string> filenames;
+    vector<cv::String> filenames;
     cv::glob(folder, filenames);
+    //cv::glob(folder, filenames, false);
 
     // init ORBextractor
     int nLevels = 6;
